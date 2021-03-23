@@ -29,8 +29,7 @@ public class DemoApplication {
 		case 4: case 6: case 9: case 11:
 			date = date30; break;
 		case 2:
-			date = ((year % 4==0 && year % 100 !=0) || year % 400==0) ? date29 : date28;
-			break;
+			date = date29;
 		default: 
 			date = date31;
 		}

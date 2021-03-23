@@ -23,3 +23,8 @@
 1616385340514	Delete elements
 1616385347309	Delete elements
 1616393753351	Delete element
+1616467585883	Extract method 'myCalendar'
+1616470254999	Rename type 'LoginRepository'
+1616470422976	Rename type 'CommonService'
+1616470442627	Rename type 'LoginService'
+1616470454546	Rename type 'AuthService'

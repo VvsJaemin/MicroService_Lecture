@@ -68,31 +68,27 @@ public class DummyGenerator {
 	}
 
 	public String myCalendar(int start, int end) {
-		int year = rangeBelowRandom.apply(start, end);
-		int month = rangeBelowRandom.apply(1, 12);
-		int date28 = rangeBelowRandom.apply(1, 28);
-		int date29 = rangeBelowRandom.apply(1, 29);
-		int date30 = rangeBelowRandom.apply(1, 30);
-		int date31 = rangeBelowRandom.apply(1, 31);
+		int year = rangeBelowRandom.apply(start,end);
+		int month = rangeBelowRandom.apply(1,12);
+		int date28 = rangeBelowRandom.apply(1,28);
+		int date29 = rangeBelowRandom.apply(1,29);
+		int date30 = rangeBelowRandom.apply(1,30);
+		int date31 = rangeBelowRandom.apply(1,31);
 		int date = 0;
-
-		boolean leapyear = ((year % 4 == 0 && year % 100 == 0) || year % 400 == 0);
-
-		switch (month) {
-		case 4:
-		case 6:
-		case 9:
-		case 11:
-			date = date30;
-			break;
+		
+		
+		boolean leapyear = ((year % 4 ==0 && year %100==0) || year % 400==0);
+		
+		switch(month) {
+		case 4: case 6: case 9: case 11:
+			date = date30; break;
 		case 2:
-			date = leapyear ? date29 : date28;
-			break;
+			date = leapyear ? date29:date28; break;
 		default:
 			date = date31;
 		}
-
-		return year + "-" + month + "-" + date;
+		
+		return year+"-"+month+"-"+date;
 	}
 
 	public String makeGender() {
@@ -106,13 +102,11 @@ public class DummyGenerator {
 	}
 
 	public User makeUser() {
-		return new User(makeName(), "1", makeUsername(), makeEmail(),  
-				makeBirthday(), makeGender(), makeRegdate());
-
+		return new User();
 	}
-
+	
 	public void a(int a) {
-
+		
 	}
-
+	
 }

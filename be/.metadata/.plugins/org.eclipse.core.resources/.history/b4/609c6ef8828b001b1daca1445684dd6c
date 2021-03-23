@@ -64,35 +64,25 @@ public class DummyGenerator {
 	}
 
 	public String makeBirthday() {
-		return myCalendar(1970, 2000);
-	}
-
-	public String myCalendar(int start, int end) {
-		int year = rangeBelowRandom.apply(start, end);
+		int year = rangeBelowRandom.apply(1970, 2000);
 		int month = rangeBelowRandom.apply(1, 12);
 		int date28 = rangeBelowRandom.apply(1, 28);
 		int date29 = rangeBelowRandom.apply(1, 29);
 		int date30 = rangeBelowRandom.apply(1, 30);
 		int date31 = rangeBelowRandom.apply(1, 31);
 		int date = 0;
-
-		boolean leapyear = ((year % 4 == 0 && year % 100 == 0) || year % 400 == 0);
-
-		switch (month) {
-		case 4:
-		case 6:
-		case 9:
-		case 11:
-			date = date30;
-			break;
+		
+		boolean leapYear = ((year % 4==0 && year % 100 !=0) || year % 400==0);
+		
+		switch(month) {
+		case 4: case 6: case 9: case 11:
+			date = date30; break;
 		case 2:
-			date = leapyear ? date29 : date28;
-			break;
-		default:
+			date = date29;
+		default: 
 			date = date31;
 		}
-
-		return year + "-" + month + "-" + date;
+			return year+"-"+month+"-"+date;
 	}
 
 	public String makeGender() {
@@ -102,17 +92,29 @@ public class DummyGenerator {
 	}
 
 	public String makeRegdate() {
-		return myCalendar(2019, 2020);
+		int year = rangeRandom.apply(1970, 2000);
+		int month = rangeRandom.apply(1, 12);
+		int reg = rangeRandom.apply(1, 30);
+		int reg2 = rangeRandom.apply(1, 29);
+		int reg3 = rangeRandom.apply(1, 28);
+		int reg4 = rangeRandom.apply(1, 31);
+		
+		boolean leapYear = false;
+		if(year % 4 ==0) {leapYear=true;}
+		if(year % 4 ==0) {leapYear=true;}
+
+		switch(month) {
+		case 1
+		}
+		return "";
 	}
 
 	public User makeUser() {
-		return new User(makeName(), "1", makeUsername(), makeEmail(),  
-				makeBirthday(), makeGender(), makeRegdate());
-
+		return null;
 	}
-
+	
 	public void a(int a) {
-
+		
 	}
-
+	
 }

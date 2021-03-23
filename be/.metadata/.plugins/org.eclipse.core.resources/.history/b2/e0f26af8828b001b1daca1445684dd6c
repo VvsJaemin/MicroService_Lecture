@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class User {
 
 	@Id
-	@GeneratedValue // 1씩 자동 증가 
+	@GeneratedValue
 
 
 	@Column(name = "user_No")
@@ -34,6 +34,4 @@ public class User {
 	@Column(name = "regdate")
 	private String regdate;
 
-	
-	
 }

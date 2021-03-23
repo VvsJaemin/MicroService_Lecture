@@ -64,55 +64,53 @@ public class DummyGenerator {
 	}
 
 	public String makeBirthday() {
-		return myCalendar(1970, 2000);
-	}
+		int year = rangeRandom.apply(1970, 2020);
+		int month = rangeRandom.apply(1, 12);
+		
+		if (year % 4 == 0 && year % 100 != 0 || year == 0 && month == 2) {
+			
+			int leapdate = rangeRandom.apply(1, 29);
+			return year + "년" + month + "월" + leapdate + "일";
+			
+		} else {
+			if (month == 1 || month == 3 || month == 5 || 
+					month == 7 || month == 8 || month == 10 || month == 12) {
+				
+				int date2 = rangeRandom.apply(1, 31);
+				return year + "년" + month + "월" + date2 + "일";
+				
+			} else if (month == 4 || month == 6 || month == 9 || month == 11) {
+				
+				int date3 = rangeRandom.apply(1, 30);
+				return year + "년" + month + "월" + date3 + "일";
+				
+			} else {
+				
+				int date4 = rangeRandom.apply(1, 28);
+				return year + "년" + month + "월" + date4 + "일";
+			}
 
-	public String myCalendar(int start, int end) {
-		int year = rangeBelowRandom.apply(start, end);
-		int month = rangeBelowRandom.apply(1, 12);
-		int date28 = rangeBelowRandom.apply(1, 28);
-		int date29 = rangeBelowRandom.apply(1, 29);
-		int date30 = rangeBelowRandom.apply(1, 30);
-		int date31 = rangeBelowRandom.apply(1, 31);
-		int date = 0;
-
-		boolean leapyear = ((year % 4 == 0 && year % 100 == 0) || year % 400 == 0);
-
-		switch (month) {
-		case 4:
-		case 6:
-		case 9:
-		case 11:
-			date = date30;
-			break;
-		case 2:
-			date = leapyear ? date29 : date28;
-			break;
-		default:
-			date = date31;
 		}
-
-		return year + "-" + month + "-" + date;
+	
 	}
 
 	public String makeGender() {
-		List<String> arr = Arrays.asList("M", "F");
+		List<String> arr = Arrays.asList(c, "F");
 		shuffle(arr);
 		return arr.get(0);
 	}
 
 	public String makeRegdate() {
-		return myCalendar(2019, 2020);
+		int reg = regdate.apply(1, 30);
+		int reg2 = regdate.apply(1, 29);
+		int reg3 = regdate.apply(1, 28);
+		int reg4 = regdate.apply(1, 31);
+
+		return "";
 	}
 
 	public User makeUser() {
-		return new User(makeName(), "1", makeUsername(), makeEmail(),  
-				makeBirthday(), makeGender(), makeRegdate());
-
-	}
-
-	public void a(int a) {
-
+		return null;
 	}
 
 }

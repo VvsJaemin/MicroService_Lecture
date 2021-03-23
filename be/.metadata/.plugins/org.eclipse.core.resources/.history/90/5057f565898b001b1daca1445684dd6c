@@ -106,9 +106,18 @@ public class DummyGenerator {
 	}
 
 	public User makeUser() {
-		return new User(makeName(), "1", makeUsername(), makeEmail(),  
-				makeBirthday(), makeGender(), makeRegdate());
-
+		return new 				 User(String name, String password, String username, String email, String birthday, String gender,
+						String regdate) {
+					super();
+					this.name = name;
+					this.password = password;
+					this.username = username;
+					this.email = email;
+					this.birthday = birthday;
+					this.gender = gender;
+					this.regdate = regdate;
+				}
+				
 	}
 
 	public void a(int a) {
